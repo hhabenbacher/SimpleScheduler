@@ -1,5 +1,5 @@
-A simple _"Cooperative Scheduler"_ in _"C"_ with Priorities by Messages
-===================================================================
+A simple _"Cooperative Scheduler"_ in _"C"_ with priorities by messages
+=======================================================================
 
 Herwig Habenbacher 2017
 
@@ -76,8 +76,8 @@ Fields «msg» and «param» are used for the message, a value _0xFF_ (255) is u
 // so some communication may be done via signals instead of messages
 typedef struct
 {
-T_Byte  sigPrio[3];   // 8 signals with priority low / medium / high
-T_Byte  state;        // additional task state info
+  T_Byte  sigPrio[3];   // 8 signals with priority low / medium / high
+  T_Byte  state;        // additional task state info
 } TS_TaskSignal;      // size: 4 bytes
 ```
 
@@ -116,15 +116,15 @@ In the current version the type is _void_ - so no value is returned.
 // tasks, highest priorities first and then in the order they were posted.
 typedef struct
 {
-T_Event          msgQueue[SCHED_MSG_QUEUE_SIZE];  // message queue for events
-TS_TaskSignal    signals[SCHED_MAX_TASK_SIZE];    // task signals and state
-TA_MsgQueueLink  queueLinkHead;                   // link for managing the msg queue
-TA_MsgQueueLink  queueLinkTail;                   // link for managing the msq queue
-T_Event          actEvent;                        // actual scheduled event
-TE_SchedState    state;                           // scheduler state
-T_Byte           execLevel;                       // only prio events dispatched
-T_Bool           isResuming;                      // is in resuming state
-T_Bool           isInterrupted;                   // is in interrupted mode
+  T_Event          msgQueue[SCHED_MSG_QUEUE_SIZE];  // message queue for events
+  TS_TaskSignal    signals[SCHED_MAX_TASK_SIZE];    // task signals and state
+  TA_MsgQueueLink  queueLinkHead;                   // link for managing the msg queue
+  TA_MsgQueueLink  queueLinkTail;                   // link for managing the msq queue
+  T_Event          actEvent;                        // actual scheduled event
+  TE_SchedState    state;                           // scheduler state
+  T_Byte           execLevel;                       // only prio events dispatched
+  T_Bool           isResuming;                      // is in resuming state
+  T_Bool           isInterrupted;                   // is in interrupted mode
 } TS_Scheduler;                                     
 ```
 
