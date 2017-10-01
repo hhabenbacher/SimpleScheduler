@@ -78,7 +78,7 @@ typedef struct
 {
   T_Byte  sigPrio[3];   // 8 signals with priority low / medium / high
   T_Byte  state;        // additional task state info
-} TS_TaskSignal;      // size: 4 bytes
+} TS_TaskSignal;        // size: 4 bytes
 ```
 
 After reading all priorities are reset!  
