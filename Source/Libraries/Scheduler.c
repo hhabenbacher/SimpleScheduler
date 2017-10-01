@@ -2,7 +2,7 @@
 //  A simple "Cooperative Scheduler" in "C" with Priorities by Messages
 //  License is MIT / BSD / Apache - whatever you prefer
 //
-//  FILE	    Scheduler.c
+//  FILE        Scheduler.c
 //
 //  AUTHOR(S)   Herwig Habenbacher (hh)
 //
@@ -77,7 +77,7 @@ using namespace hh;
 // =============================================================================
 
 // --- definitions for testing -------------------------------------------------
-// if we are in Unit testing mode, we want access to the DFTSegmentResult array
+// if we are in Unit testing mode, we want access to the some data
 // and the functions, otherwise they should be local via static declaration
 #ifdef _UNIT_TESTING_PROGRAM_
 #define UT_SCHED_STATIC
